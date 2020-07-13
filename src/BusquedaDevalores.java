@@ -12,8 +12,8 @@ public class BusquedaDevalores {
 
         int numero=0;
 
-        while(numero!=-1){ //bucle que determina si termina el programa
-            System.out.println("Que valor quieres buscar");
+        while(numero!=-1){ //bucle que determina si termina el programa si el usuario introduce -1
+            System.out.println("Que valor quieres buscar(si no quieres buscar ningun valor introduce -1)");
             numero= input.nextInt();
 
             if(numero!=-1){ //si el usuario introduce el valor -1 no ejecuta el buscador
@@ -25,12 +25,18 @@ public class BusquedaDevalores {
 
                 if(opcion==1){//cuando elige la primera opcion
                     for(int i=0;i<myArray.length;i++){
-                        if (myArray[i]==numero) {
+                        if (myArray[i]==numero) {//
                             contador++;
                             System.out.println("El valor "+numero+" aparece en el indice: "+i);
                         }
                     }
-                    System.out.println("El numero de veces que aparece tu valor es:"+contador);
+
+                    if(contador>0){
+                        System.out.println("El numero de veces que aparece tu valor es:"+contador);
+                    }else{
+                        System.out.println("Tu valor no aparece en el array");
+                    }
+
                 }else{
                     for(int i=0;i<myArray.length;i++){
                         if (myArray[i]==numero) {
@@ -43,18 +49,9 @@ public class BusquedaDevalores {
                     }else{
                         System.out.println("Tu valor no aparece en el array");
                     }
-
-
                 }
-
-                if(contador==0){
-                    contador=-1;
-                }
-
-
             }
         }
-
         System.out.println("FIN DEL PROGRAMA");
     }
 }
